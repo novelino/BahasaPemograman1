@@ -19,7 +19,7 @@ fun main() {
     println(Novel.name)
 
     val Novel : Novel = Novel
-    println(ardi.nationality)
+    println(Novel.nationality)
 
     println(Novel)
 }
