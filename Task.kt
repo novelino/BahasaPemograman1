@@ -1,88 +1,98 @@
-fun main() {
-    //variabel
-    val firstName1 = "Andi"
-    val lastName1 = "Budiman"
-    val age1 = 21
+package inheritance
 
-    println(firstName1)
-    println(lastName1)
-    println(age1)
+fun main(){
 
-    val firstName2 = "Rudi"
-    val lastName2 = "Setiawan"
-    val age2 = 20
+    val afrig = dosen()
+    afrig.nama = "Afrig Aminuddin"
+    afrig.alamat = "Condongcatur"
+    afrig.perkenalan()
+    afrig.gaji = 1000000
+    afrig.bekerja()
+    afrig.prodi = "Sistem Informasi"
+    afrig.mengajar()
 
-    println(firstName2)
-    println(lastName2)
-    println(age2)
+    val andika = mahasiswa()
+    andika.nama = "Andika Maharani"
+    andika.alamat ="Bantul"
+    andika.perkenalan()
+    andika.prodi = "Sistem Informasi"
+    andika.belajar()
 
-    //array
-    val firstName = arrayListOf<String>()
-    val lastName = arrayListOf<String>()
-    val age = arrayListOf<Int>()
+    val budi = satpam()
+    budi.nama = "Budi Satria"
+    budi.alamat = "Wonosari"
+    budi.perkenalan()
+    budi.gaji = 500000
+    budi.bekerja()
+    budi.pos = "Pos Barat"
+    budi.menjaga()
 
-    firstName.add("Andi")
-    lastName.add("Budiman")
-    age.add(21)
+    println()
+    println()
+    val dino = dokter()
+    dino.nama = "Dino Hardiansyah"
+    dino.perkenalan()
+    dino.alamat = "Sleman"
+    dino.jenis_kel = "Laki-laki"
+    dino.spesialisasi = "Saraf"
+    dino.memeriksa()
 
-    firstName.add("Rudi")
-    lastName.add("Setiawan")
-    age.add(20)
+    val ega = asisten_dokter()
+    ega.nama = "Ega Brahmantya"
+    ega.pendidikan = "S1-keperawatan"
+    ega.membantu()
 
-    for (first in firstName) {
-        println(first)
-    }
-    for (last in lastName) {
-        println(last)
-    }
-    for (a in age) {
-        println(a)
-    }
+    println()
 
-    //array v2
-    val andiArray = arrayListOf<Any>()
-    andiArray.add("Andi")
-    andiArray.add("Budiman")
-    andiArray.add(21)
-    for (andi in andiArray) {
-        println(andi)
-    }
+    val fahmi = pasien()
+    fahmi.nama = "Muhammad Fahmi Azriel"
+    fahmi.perkenalan()
+    fahmi.jenis_kel = "Laki-laki"
+    fahmi.no_tlp = +628124353
+    fahmi.alamat = "Condongcatur"
+    fahmi.tgl_masuk = "22 November 2019"
+    println()
+    fahmi.keluhan = "Tangan bengkok dan sakit setelah terjatuh dari sepeda"
+    fahmi.diperiksa()
 
-    //array v3
-    val mhsArray = arrayListOf<ArrayList<Any>>()
-    mhsArray.add(andiArray)
-    mhsArray.add(arrayListOf("Rudi", "Setiawan", 20))
-    for (item in mhsArray) {
-        for (i in item) {
-            println(i)
-        }
-    }
+    val kamar = ruang()
+    kamar.nama_ruang = "Cenderawasih"
+    kamar.kelas_perawatan = 1
+    kamar.jml_kasur = 2
+    kamar.disediakan()
 
-    //data class
-    val andi = User("Andi", "Budiman", 21)
-    val rudi = User(age = 20, lastName = "Setiawan", firstName = "Rudi")
-    val dedi = User()
-    dedi.age = 35
-    dedi.firstName = "Dedi"
+    val sakit = penyakit()
+    sakit.nama = "Fraktur"
+    sakit.tgl_periksa = "22 November 2019"
+    sakit.diderita()
 
-    val andi2 = andi.copy(age = 40)
+    val cek = tindakan()
+    cek.nama = "Pemindaian/Rontgen"
+    cek.jenis_tindakan = "pindai dua atau tiga dimensi"
+    cek.diberi()
 
-    println(andi)
-    println(rudi)
-    println(dedi)
+    val pil = obat()
+    pil.nama = "Opioid"
+    pil.jenis_obat = "Penghilang rasa sakit"
+    pil.dikonsumsi()
 
-    println(andi.lastName)
-    println(andi2)
+    val berkas = penunjang()
+    berkas.jenis_penunjang = "Pemindaian/Rontgen"
+    berkas.tgl_periksa = "21 November 2019"
+    berkas.hasil_penunjang = "Retak di bagian tangan"
+    berkas.diberi()
 
-    //data class array
-    val mhsAmikom = arrayListOf<User>()
-    mhsAmikom.add(andi)
-    mhsAmikom.add(rudi)
-    mhsAmikom.add(dedi)
+    val total = tarif()
+    total.tarif_dokter = 50000
+    total.tarif_obat = 25000
+    total.tarif_penunjang = 2000
+    total.tarif_ruang = 3000000
+    total.tarif_tindakan = 200000
+    total.total_tarif
+    total.dikenakan()
 
-    mhsAmikom.add(User("Ferdi", "Setiawan", 45))
-
-    for (mhs in mhsAmikom) {
-        println(mhs)
-    }
+    val pulang = ringkasan_kepulangan()
+    pulang.tgl_pulang = "30 November 2019"
+    pulang.keadaan_pulang = "pemulihan menggunakan gips"
+    pulang.dicatat()
 }
